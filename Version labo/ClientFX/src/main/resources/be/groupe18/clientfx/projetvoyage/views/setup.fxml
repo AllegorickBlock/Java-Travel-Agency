@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="be.groupe18.clientfx.projetvoyage.views.SetupView">
+   <bottom>
+      <BorderPane prefHeight="50.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Separator prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <Label fx:id="resumeLabel" text="0,00 km, 0,00 heures, 0,00 euros" BorderPane.alignment="CENTER_RIGHT">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="newPlaneButton" layoutX="154.0" layoutY="3.0" mnemonicParsing="false" onAction="#onNewPlaneClick" text="Ajouter une étape avion" />
+                  <Button fx:id="newHotelButton" layoutX="309.0" layoutY="3.0" mnemonicParsing="false" onAction="#onNewHotelClick" text="Ajouter une étape hôtel" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </bottom>
+   <top>
+      <BorderPane prefHeight="25.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="60.0" layoutY="4.0" text="Date de départ" />
+                  <DatePicker fx:id="dateStartPicker" layoutX="151.0" onAction="#onChangeStartDate" />
+                  <Label layoutX="366.0" layoutY="4.0" text="Ville de départ : " />
+                  <Button fx:id="openStartCity" layoutX="478.0" mnemonicParsing="false" onAction="#onChangeDestination" text="Choisir ..." />
+               </children>
+            </AnchorPane>
+         </center>
+         <bottom>
+            <Separator prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="5.0" />
+               </BorderPane.margin>
+            </Separator>
+         </bottom>
+         <top>
+            <TextField fx:id="tripName" onKeyPressed="#onChangeNameTrip" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="10.0" />
+               </BorderPane.margin>
+            </TextField>
+         </top>
+      </BorderPane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="listSetup" />
+         </content>
+      </ScrollPane>
+   </center>
+</BorderPane>
